@@ -12,7 +12,7 @@ This repo is a pipeline for creating synthetic data for semantic segmentation:
 ---
 
 ## How to use
-- Install dependencies (in *requirements.txt*) in each folder.
+- Install dependencies (*requirements.txt*) in each folder.
 - Train the autolabeling model:`Train_Autolabel_Model`
 
 - To create the synthetic dataset:
