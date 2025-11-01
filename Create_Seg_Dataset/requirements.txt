@@ -1,0 +1,15 @@
+# cmake
+pyarrow==17.0.0
+torch
+torchvision
+transformers
+diffusers
+accelerate
+datasets
+Pillow
+huggingface_hub
+gguf
+tqdm
+protobuf
+sentencepiece 
+safetensors

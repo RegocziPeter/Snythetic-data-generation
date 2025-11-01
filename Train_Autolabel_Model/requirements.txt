@@ -1,0 +1,10 @@
+pyarrow==17.0.0
+torch
+torchvision
+evaluate
+transformers
+accelerate
+datasets
+Pillow
+albumentations==1.2.1
+huggingface_hub

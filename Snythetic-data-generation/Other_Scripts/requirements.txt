@@ -1,6 +1,0 @@
-torch
-torchvision
-datasets
-Pillow
-huggingface_hub
-tqdm
