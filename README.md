@@ -1,4 +1,5 @@
 # Automated generative data augmentation for enhancing the robustness of segmentation neural networks
+![Pipeline](Pipeline.png)
 
 ## Repository overview
 
@@ -18,7 +19,7 @@ This repo is a pipeline for creating synthetic data for semantic segmentation:
 - To create the synthetic dataset:
 
   1. Create captions for images: `Create_Prompts/images2captions.py`
-  2. Refine captions with correction instruction and extra prompt: `Create_Prompts/captions2prompts.py`
+  2. Refine captions with the correction instruction and the situation prompt: `Create_Prompts/captions2prompts.py`
   3. Create synthetic images with FLUX.1-dev: `Create_Seg_Dataset/use_flux.py`
   4. Autolabel the synthetic images: `Create_Seg_Dataset/run_labeling.py`
 
