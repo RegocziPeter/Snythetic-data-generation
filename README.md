@@ -26,7 +26,21 @@ This repo is a pipeline for creating synthetic data for semantic segmentation:
 
 - Test if the synthetic dataset improves the semantic segmentation models robustness: `Tester/train_deeplab`, `Tester/train_segformer`
 
----
 !!!
 **For details, see the README in each folder.**
 !!!
+
+---
+ 
+## Shared models, datasets
+
+#### Models
+
+- Autolabeling models used in ensemble: https://huggingface.co/regpeter/DINO_autolabeling_models
+
+#### Datasets:
+- Generated prompts for FLUX.1-dev: https://huggingface.co/datasets/regpeter/flux_prompts
+
+- Synthetic images - all realistic style: https://huggingface.co/datasets/regpeter/Flux_image_seg_3
+
+- Synthetic images - realistic + drawing style: https://huggingface.co/datasets/regpeter/Flux_image_seg_drawing
