@@ -1,5 +1,5 @@
 # Automated generative data augmentation for enhancing the robustness of segmentation neural networks
-![Pipeline](pipeline.png)
+![Pipeline](Pipeline.png)
 
 ## Repository overview
 
