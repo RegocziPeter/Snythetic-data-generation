@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 2. Fill the placeholders in ```train.py``` (HF token, model name, hyperparameters, etc.).
 
-(You can create a Huggingface dataset from a local dataset with ```Other_Scripts\hf-dataset-creator.ipynb```.)
+(You can create a Huggingface dataset from a local dataset with ```Other_Scripts/hf-dataset-creator.ipynb```.)
 
  In ```model.py```, set FREEZE_START_LAYER variable based on how many layers to unfreeze in DINOv2/DINOv3.
 

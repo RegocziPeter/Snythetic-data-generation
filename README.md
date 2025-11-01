@@ -16,10 +16,11 @@ This repo is a pipeline for creating synthetic data for semantic segmentation:
 - Train the autolabeling model:`Train_Autolabel_Model`
 
 - To create the synthetic dataset:
-  1. Create captions for images: `Create_Prompts\images2captions.py`
-  2. Refine captions with correction instruction and extra prompt: `Create_Prompts\captions2prompts.py`
-  3. Create synthetic images with FLUX.1-dev: `Create_Seg_Dataset\use_flux.py`
-  4. Autolabel the synthetic images: `Create_Seg_Dataset\run_labeling.py`
+
+  1. Create captions for images: `Create_Prompts/images2captions.py`
+  2. Refine captions with correction instruction and extra prompt: `Create_Prompts/captions2prompts.py`
+  3. Create synthetic images with FLUX.1-dev: `Create_Seg_Dataset/use_flux.py`
+  4. Autolabel the synthetic images: `Create_Seg_Dataset/run_labeling.py`
 
 
 - Test if the synthetic dataset improves the semantic segmentation models robustness: `Tester/train_deeplab`, `Tester/train_segformer`

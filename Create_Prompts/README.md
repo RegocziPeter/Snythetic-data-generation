@@ -17,7 +17,7 @@ python -m pip install -r Create_Prompts\requirements.txt
 
 2) Edit the scripts and set your Hugging Face token and dataset IDs (search for `hf_token` and dataset placeholders).
 
-(You can create a Huggingface dataset from a local dataset with `Other_Scripts\hf-dataset-creator.ipynb`.)
+(You can create a Huggingface dataset from a local dataset with `Other_Scripts/hf-dataset-creator.ipynb`.)
 
 3) Run (from repo root):
 
