@@ -4,6 +4,7 @@ from utils.dino_segformer import DinoWithSegformerHead
 from safetensors.torch import load_file
 from transformers import AutoModel
 import torch
+from huggingface_hub import hf_hub_download
 
 class EnsembleModel(torch.nn.Module):
 	def __init__(self, num_classes, ignore_class=None, uncertainty_method=None, uncertainty_threshold=2.0):
@@ -29,19 +30,21 @@ class EnsembleModel(torch.nn.Module):
 		model4 = Dinov3WithComplexHead(backbone4, hidden_size=backbone4.config.hidden_size, num_classes=num_classes)
 		model5 = DinoWithSegformerHead(backbone5, "dinov3", num_classes=num_classes)
 
-		model1_id = "dinov2_complex/model.safetensors"
-		model2_id = "dinov2_complex_onlyHead/model.safetensors"
-		model3_id = "dinov3_complex/model.safetensors"
-		model4_id = "dinov3_complex_onlyHead/model.safetensors"
-		model5_id = "dinov3_segformer/model.safetensors"
-
-		model_ids = [model1_id, model2_id, model3_id, model4_id, model5_id]
+		repo_id = "regpeter/DINO_autolabeling_models"
+		model_files = [
+			"dinov2_complex/model.safetensors",
+			"dinov2_complex_onlyHead/model.safetensors",
+			"dinov3_complex/model.safetensors",
+			"dinov3_complex_onlyHead/model.safetensors",
+			"dinov3_segformer/model.safetensors"
+		]
 		models = [model1, model2, model3, model4, model5]
-		assert len(model_ids) == len(models), "Number of model IDs must match number of models"
+		assert len(model_files) == len(models), "Number of model files must match number of models"
 
 		self.models = torch.nn.ModuleList(models)
 		for i, model in enumerate(self.models):
-			state_dict = load_file(model_ids[i], device="cuda")
+			safetensor_path = hf_hub_download(repo_id=repo_id, filename=model_files[i])
+			state_dict = load_file(safetensor_path, device="cuda")
 			model.load_state_dict(state_dict)
 			model.to("cuda")
 
